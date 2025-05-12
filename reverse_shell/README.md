@@ -16,7 +16,7 @@ leanest possible codebase, prioritizing binary size above all other consideratio
 To utilize this reverse shell, you'll need to modify the source file
 to specify the target IP address and port for the connection.
 
-## Generating the IP Address Constant
+### Generating the IP Address Constant
 
 For your convenience, you can use the following Python command to convert a
 standard IPv4 address into the hexadecimal format required by the `shell.c`
