@@ -1,6 +1,5 @@
 ; hello.asm – minimal Linux x86-64 program
-; Assemble with: nasm -f elf64 hello.asm
-; Link with:     ld -o hello hello.o -nostdlib -static
+; Assemble with: nasm -f bin hello.s
 BITS 64
 
 org 0x400000 ; Default base address for 64-bit executables
