@@ -16,15 +16,17 @@ def get_magic_bytes():
         print("Invalid port number.")
         return
 
-    port_be = struct.pack('>H', port)
-    port_hex = f"0x{port_be.hex()}"
+    port_be = struct.pack('<H', port)
+    port_hex = f"{port_be.hex()}"
 
     ip_le = ip_bytes[::-1]
-    ip_hex = f"0x{ip_le.hex()}"
+    ip_hex = f"{ip_le.hex()}"
 
-    print("\n🧙 Assembly-compatible magic bytes:")
-    print(f"Port (htons format):     {port_hex}")
-    print(f"IP address (LE format):  {ip_hex}")
+    print("\n🪄 Magic bytes:")
+    print(f"Port:        0x{port_hex}")
+    print(f"IP address:  0x{ip_hex}")
+    print("\n🧙 And the magic connect string for assembly:")
+    print(f"0x{ip_hex}{port_hex}0002")
 
 if __name__ == "__main__":
     get_magic_bytes()

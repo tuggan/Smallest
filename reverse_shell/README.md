@@ -1,14 +1,14 @@
 # Reverse Shell
 
 This project showcases my attempt at creating the smallest possible reverse
-shell. Currently, the compiled binary weighs in at **272 bytes**.
+shell. Currently, the compiled binary weighs in at **236 bytes**.
 
 The primary goal here was to achieve basic reverse shell functionality with the
 leanest possible codebase, prioritizing binary size above all other considerations.
 
 | Binary                 | Source Language | Size (bytes) |
 | ---------------------- | --------------- | -----------: |
-| hello.asm.x86_64.linux | Assembly        |          272 |
+| hello.asm.x86_64.linux | Assembly        |          236 |
 | hello.c.x86_64.linux   | C               |         4504 |
 
 ## Usage
@@ -19,17 +19,19 @@ to specify the target IP address and port for the connection.
 ### Generating the IP Address Constant
 
 For your convenience, you can use the following Python command to convert a
-standard IPv4 address into the hexadecimal format required by the `shell.c`
-code:
+standard IPv4 address into the hexadecimal format required by the source files:
 
 ```shell
 python3 magic.py
 Enter IP address (e.g. 127.0.0.1): 10.11.131.43
 Enter port number (e.g. 4242): 6666
 
-🧙 Assembly-compatible magic bytes:
-Port (htons format):     0x1a0a
-IP address (LE format):  0x2b830b0a
+🪄 Magic bytes:
+Port:        0x0a1a
+IP address:  0x2b830b0a
+
+🧙 And the magic connect string for assembly:
+0x2b830b0a0a1a0002
 ```
 
 The magic numbers are `0x1a0a` and `0x2b830b0a`
